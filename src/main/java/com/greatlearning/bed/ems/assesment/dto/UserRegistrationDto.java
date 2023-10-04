@@ -2,6 +2,8 @@ package com.greatlearning.bed.ems.assesment.dto;
 
 public class UserRegistrationDto {
 
+	
+
 	private String firstName;
 	private String lastName;
 	private String email;
@@ -49,6 +51,12 @@ public class UserRegistrationDto {
 
 	public void setRole(String role) {
 		this.role = role;
+	}
+	
+	@Override
+	public String toString() {
+		return "UserRegistrationDto [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+				+ ", password=" + password + ", role=" + role + "]";
 	}
 	
 	

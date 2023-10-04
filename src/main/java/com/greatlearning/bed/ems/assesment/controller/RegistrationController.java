@@ -5,8 +5,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.greatlearning.bed.ems.assesment.dto.UserRegistrationDto;
+import com.greatlearning.bed.ems.assesment.model.NewEmployeeRegister;
+import com.greatlearning.bed.ems.assesment.model.Role;
 import com.greatlearning.bed.ems.assesment.service.UserService;
 
 @Controller
@@ -31,8 +34,10 @@ public class RegistrationController {
 	}
 
 	@PostMapping
-	public String registerUserAccount(@ModelAttribute("user") UserRegistrationDto registrationDto) {
+	public String registerUserAccount(@ModelAttribute("user")  UserRegistrationDto registrationDto ) {
 
+
+		System.out.println(registrationDto);
 		userService.save(registrationDto);
 		return "redirect:/registration?success";
 	}
